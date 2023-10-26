@@ -2,7 +2,7 @@
 metrochat by obsidian
 you can sell it so no license
 */
-var hostname = "broker.hivemq.com";
+var hostname = "wss://broker.hivemq.com";
 var clientId = "metrochat";
 idNum = Math.floor(100000 + Math.random() * 900000);
 clientId += idNum;
