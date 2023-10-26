@@ -1,0 +1,49 @@
+body {
+    font-family: system-ui;
+    background-color: #111;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.logger {
+    position: fixed;
+    top: 3px;
+    right: 5px;
+    width: max-content;
+    height: max-content;
+    text-align: right;
+    font-weight: bold;
+    font-style: italic;
+    color: #797979;
+}
+
+.msgInput {
+    position: fixed;
+    width: calc(100% - 20px);
+    height: max-content;
+    bottom: 15px;
+    left: 10px;
+    background-color: #181818;
+    font-family: system-ui;
+    font-weight: bold;
+    border: 3px #181818 solid;
+    border-radius: 25px;
+    font-size: 17px;
+    padding: 10px;
+    outline: none;
+    color: #aaa;
+    box-sizing: border-box;
+    transition: all 150ms ease;
+}
+
+.msgInput:focus {
+    background-color: #202020;
+    color: #aaa;
+    outline: none;
+    border: 3px #333 solid;
+}
+
+::selection {
+    color: #111;
+    background-color: #aaa;
+}
