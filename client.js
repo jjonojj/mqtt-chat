@@ -12,9 +12,10 @@ mqttClient.onMessageArrived =  MessageArrived;
 mqttClient.onConnectionLost = ConnectionLost;
 Connect();
 
+// input field
 msgInput = document.getElementById("msgInput");
 
-/*Initiates a connection to the MQTT broker*/
+// connect function, firefox says that its unsafe or stuff
 function Connect(){
 	mqttClient.connect({
 		onSuccess: Connected,
@@ -22,30 +23,32 @@ function Connect(){
 	});
 }
 
+// event listener for the input field
 msgInput.addEventListener("keypress", function(event) {
     if (event.keyCode == 13) {
         sendMessage()
     }
 })
 
+// function for sending messages because client/server are 1 file
 function sendMessage() {
     mqttClient.send("metrochat/main", msgInput.value);
 }
 
-/*Callback for successful MQTT connection */
+// if connection was sucessful
 function Connected() {
     console.log("Connected");
     document.getElementById("logger").innerHTML = "connected w/ ID " + idNum;
     mqttClient.subscribe("metrochat/main");
 }
 
-/*Callback for failed connection*/
+// if connection is failed
 function ConnectionFailed(res) {
     console.log("Connect failed:" + res.errorMessage);
     document.getElementById("logger").innerHTML = "failed to connect: " + res.errorMessage;
 }
 
-/*Callback for lost connection*/
+// if connection is lost
 function ConnectionLost(res) {
     if (res.errorCode != 0) {
         console.log("Connection lost:" + res.errorMessage);
@@ -54,7 +57,7 @@ function ConnectionLost(res) {
     }
 }
 
-/*Callback for incoming message processing */
+// message handling
 function MessageArrived(message) {
     if (document.getElementById("content").innerHTML == "nothing to see here") {
         document.getElementById("content").innerHTML = message.payloadString + "<br>";
