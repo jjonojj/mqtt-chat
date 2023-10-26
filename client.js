@@ -18,8 +18,7 @@ msgInput = document.getElementById("msgInput");
 function Connect(){
 	mqttClient.connect({
 		onSuccess: Connected,
-		onFailure: ConnectionFailed,
-		keepAliveInterval: 10
+		onFailure: ConnectionFailed
 	});
 }
 
