@@ -2,4 +2,4 @@
 a webchat app using mqtt. very basic and exploitable.
 
 # note:
-currently has some issues with connecting because the connection is insecure. I don't know how to fix it but I'm googling as fast as I can.
+currently has some issues with wss. i do not know how to solve it but i try.
