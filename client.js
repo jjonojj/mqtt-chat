@@ -3,7 +3,7 @@ metrochat client / server
 */
 var hostname = "broker.hivemq.com";
 var clientId = "metrousr";
-var port = 8000
+var port = 8884
 var idNum = Math.floor(100000 + Math.random() * 900000);
 clientId += idNum;
 
@@ -19,7 +19,8 @@ msgInput = document.getElementById("msgInput");
 function Connect(){
 	mqttClient.connect({
 		onSuccess: Connected,
-		onFailure: ConnectionFailed
+		onFailure: ConnectionFailed,
+        useSSL: true
 	});
 }
 
