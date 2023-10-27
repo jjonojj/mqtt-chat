@@ -39,7 +39,7 @@ function sendMessage() {
 // if connection was sucessful
 function Connected() {
     console.log("connected to " + hostname + ":" + port + " with clientId " + clientId);
-    document.getElementById("logger").innerHTML = "connected w/ ID " + idNum;
+    document.getElementById("logger").innerHTML = "connected with ID" + idNum;
     mqttClient.subscribe("metrochat/main");
 }
 
