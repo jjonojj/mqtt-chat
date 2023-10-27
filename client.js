@@ -2,12 +2,12 @@
 metrochat by obsidian
 you can sell it so no license
 */
-var hostname = "wss://broker.hivemq.com";
+var hostname = "broker.hivemq.com";
 var clientId = "metrochat";
 idNum = Math.floor(100000 + Math.random() * 900000);
 clientId += idNum;
 
-mqttClient = new Paho.MQTT.Client(hostname,8000,clientId);
+mqttClient = new Paho.MQTT.Client("broker.hivemq.com",8000,clientId);
 mqttClient.onMessageArrived =  MessageArrived;
 mqttClient.onConnectionLost = ConnectionLost;
 Connect();
