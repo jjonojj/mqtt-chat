@@ -1,6 +1,5 @@
 /* 
-metrochat by obsidian
-you can sell it so no license
+metrochat client / server
 */
 var hostname = "broker.hivemq.com";
 var clientId = "metrochat";
