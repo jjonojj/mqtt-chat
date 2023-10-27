@@ -7,7 +7,7 @@ var port = 8000
 var idNum = Math.floor(100000 + Math.random() * 900000);
 clientId += idNum;
 
-mqttClient = new Paho.MQTT.Client("broker.hivemq.com",port,clientId);
+mqttClient = new Paho.MQTT.Client(hostname,port,clientId);
 mqttClient.onMessageArrived =  MessageArrived;
 mqttClient.onConnectionLost = ConnectionLost;
 Connect();
