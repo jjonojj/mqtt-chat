@@ -2,11 +2,12 @@
 metrochat client / server
 */
 var hostname = "broker.hivemq.com";
-var clientId = "metrochat";
-idNum = Math.floor(100000 + Math.random() * 900000);
+var clientId = "metrousr";
+var port = 8000
+var idNum = Math.floor(100000 + Math.random() * 900000);
 clientId += idNum;
 
-mqttClient = new Paho.MQTT.Client("broker.hivemq.com",8000,clientId);
+mqttClient = new Paho.MQTT.Client("broker.hivemq.com",port,clientId);
 mqttClient.onMessageArrived =  MessageArrived;
 mqttClient.onConnectionLost = ConnectionLost;
 Connect();
@@ -36,7 +37,7 @@ function sendMessage() {
 
 // if connection was sucessful
 function Connected() {
-    console.log("Connected");
+    console.log("connected to " + hostname + ":" + port + " with clientId " + clientId);
     document.getElementById("logger").innerHTML = "connected w/ ID " + idNum;
     mqttClient.subscribe("metrochat/main");
 }
