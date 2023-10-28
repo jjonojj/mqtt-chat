@@ -1,6 +1,21 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background: #310063;
+    background: radial-gradient(circle, #110022 0%, rgba(0,0,0,1) 100%); 
+    
+}
+
 body {
-    font-family: system-ui;
-    background-color: #111;
+    font-family: 'Poppins', sans-serif;
     color: #aaa;
     font-weight: bold;
 }
@@ -23,10 +38,13 @@ body {
     height: max-content;
     bottom: 15px;
     left: 10px;
-    background-color: #181818;
-    font-family: system-ui;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    border: 3px #181818 solid;
+    border: 3px #310063 solid;
+    box-shadow: inset 0px 0px 30px #1a0033,
+                0px 4px 20px #000,
+                0px 4px 10px #310063;
     border-radius: 25px;
     font-size: 17px;
     padding: 10px;
@@ -37,10 +55,9 @@ body {
 }
 
 .msgInput:focus {
-    background-color: #202020;
-    color: #aaa;
+    background-color: #0a0a0a;
+    color: #fff;
     outline: none;
-    border: 3px #333 solid;
 }
 
 ::selection {
