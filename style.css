@@ -68,9 +68,6 @@ body {
 .mainpage {
     cursor: pointer;
     color: #797979;
-    position: fixed;
-    right: 5px;
-    top: 20px;
     text-decoration: underline;
     font-style: italic;
 }
