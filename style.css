@@ -11,6 +11,7 @@ html {
     background-repeat:no-repeat;
     background: #310063;
     background: radial-gradient(circle, #110022 0%, rgba(0,0,0,1) 100%); 
+    user-select: none;
     
 }
 
@@ -34,7 +35,7 @@ body {
 
 .msgInput {
     position: fixed;
-    width: calc(100% - 20px);
+    width: calc(100% - 80px);
     height: max-content;
     bottom: 15px;
     left: 10px;
@@ -75,4 +76,42 @@ body {
 .mainpage:hover {
     color: #fff;
     text-decoration: wavy;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.sendbtn {
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+    height: 52px;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 3px #310063 solid;
+    box-shadow: inset 0px 0px 30px #1a0033,
+                0px 4px 20px #000,
+                0px 4px 10px #310063;
+    border-radius: 25px;
+    font-size: 17px;
+    padding: 10px;
+    outline: none;
+    color: #fff;
+    box-sizing: border-box;
+    transition: all 150ms ease;
+    cursor: pointer;
+}
+
+.sendbtn:hover {
+    background-color: #111;
+    border: 3px #9c38ff solid;
+}
+.sendbtn:active {
+    background-color: #333;
 }

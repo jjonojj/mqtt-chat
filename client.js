@@ -27,13 +27,16 @@ function Connect(){
 // event listener for the input field
 msgInput.addEventListener("keypress", function(event) {
     if (event.keyCode == 13) {
-        sendMessage()
+        sendMessage();
     }
 })
 
 // function for sending messages because client/server are 1 file
 function sendMessage() {
-    mqttClient.send("metrochat/main", msgInput.value);
+    if (msgInput.value != "") {
+        mqttClient.send("metrochat/main", msgInput.value);
+        msgInput.value = ""
+    }
 }
 
 // if connection was sucessful

@@ -6,17 +6,21 @@
 		<meta charset="utf-8">
 		<title>metrochat</title>
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	</head>
 	<body>
         <input placeholder="hello world" class="msgInput" id="msgInput" type="text">
+		<div class="sendbtn">
+			<span class="material-symbols-outlined" onclick="sendMessage()">
+				send
+			</span>
+		</div>
         <div id="content"></div>
         <script src="client.js" type="text/javascript"></script>
 		<div class="logger" id="logger">
 			<div id="statusText" class="status">connecting...</div>
 			<div id="idText" class="id">~</div>
-
 			<!--<div onclick="location.href='https://obsiddev.github.io'" class="mainpage">return to main page</div>-->
 		</div>
-		
 	</body>
 </html>
