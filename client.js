@@ -4,8 +4,21 @@ metrochat client / server
 var hostname = "broker.hivemq.com";
 var clientId = "metrousr";
 var port = 8884
+var usrName = ""
 var idNum = Math.floor(100000 + Math.random() * 900000);
 clientId += idNum;
+const defaultNames = [
+    "quandaledingle", 
+    "joshhutcherson", 
+    "peepeelover", 
+    "toiletdefuser", 
+    "nineelevenlover911_", 
+    "pleasehelpme",
+    "helpmeplease",
+    "47.0847905,9.5629148,15.5___",
+    "johanneslutscher",
+    "rainer_winkler",
+];
 
 mqttClient = new Paho.MQTT.Client(hostname,port,clientId);
 mqttClient.onMessageArrived =  MessageArrived;
@@ -14,6 +27,9 @@ Connect();
 
 // input field
 msgInput = document.getElementById("msgInput");
+uname = document.getElementById("uname");
+
+document.getElementById("uname").showModal();
 
 // connect function, firefox says that its unsafe or stuff
 function Connect(){
@@ -23,6 +39,17 @@ function Connect(){
         useSSL: true
 	});
 }
+
+function setUsername() {
+    if (document.getElementById("unameinput").value != "") {
+        usrName = document.getElementById("unameinput").value;
+    }
+    else {
+        usrName = defaultNames[Math.floor(Math.random() * defaultNames.length)] + idNum.toString();
+    }
+    console.log("usrName: " + usrName);
+}
+
 
 // event listener for the input field
 msgInput.addEventListener("keypress", function(event) {
@@ -34,7 +61,7 @@ msgInput.addEventListener("keypress", function(event) {
 // function for sending messages because client/server are 1 file
 function sendMessage() {
     if (msgInput.value != "") {
-        mqttClient.send("metrochat/main", msgInput.value);
+        mqttClient.send("metrochat/main", usrName + "~" + msgInput.value);
         msgInput.value = ""
     }
 }
@@ -64,5 +91,6 @@ function ConnectionLost(res) {
 
 // message handling
 function MessageArrived(message) {
-    document.getElementById("content").innerHTML += message.payloadString + "<br>";
+    var msgArr = message.payloadString.split("~");
+    document.getElementById("content").innerHTML += msgArr[0] + ": " + msgArr[1] + "<br>";
 }
