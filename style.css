@@ -140,6 +140,7 @@ dialog {
     color: #aaa;
     box-sizing: border-box;
     transition: all 150ms ease;
+    min-width: 300px;
 }
 
 #unameinput:hover {
