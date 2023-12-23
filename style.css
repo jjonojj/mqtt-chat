@@ -1,24 +1,23 @@
 /*fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
 
 html {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-repeat:no-repeat;
-    background: #310063;
-    background: radial-gradient(circle, #110022 0%, rgba(0,0,0,1) 100%); 
+    background-color: #000;
     user-select: none;
     
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     color: #aaa;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .logger {
@@ -28,7 +27,6 @@ body {
     width: max-content;
     height: max-content;
     text-align: right;
-    font-weight: bold;
     font-style: italic;
     color: #797979;
 }
@@ -40,15 +38,11 @@ body {
     bottom: 15px;
     left: 10px;
     background-color: #000;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    border: 3px #310063 solid;
-    box-shadow: inset 0px 0px 30px #1a0033,
-                0px 4px 20px #000,
-                0px 4px 10px #310063;
+    font-family: 'Roboto Mono', monospace;
     border-radius: 25px;
     font-size: 17px;
     padding: 10px;
+    border: 3px #222 solid;
     outline: none;
     color: #aaa;
     box-sizing: border-box;
@@ -56,7 +50,7 @@ body {
 }
 
 .msgInput:focus {
-    background-color: #0a0a0a;
+    background-color: #111;
     color: #fff;
     outline: none;
 }
@@ -92,12 +86,8 @@ body {
     right: 10px;
     height: 52px;
     background-color: #000;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    border: 3px #310063 solid;
-    box-shadow: inset 0px 0px 30px #1a0033,
-                0px 4px 20px #000,
-                0px 4px 10px #310063;
+    font-family: 'Roboto Mono', monospace;
+    border: 3px #222 solid;
     border-radius: 25px;
     font-size: 17px;
     padding: 10px;
@@ -110,7 +100,7 @@ body {
 
 .sendbtn:hover {
     background-color: #111;
-    border: 3px #9c38ff solid;
+    border: 3px #fff solid;
 }
 .sendbtn:active {
     background-color: #333;
@@ -118,12 +108,11 @@ body {
 
 dialog {
     background-color: #000;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    border: 3px #310063 solid;
-    box-shadow: inset 0px 0px 30px #1a0033,
-                0px 4px 20px #000,
-                0px 4px 10px #310063;
+    font-family: 'Roboto Mono', monospace;
+    
+    border: 3px #333 solid;
+    box-shadow: 0px 0px 0px 2000px #000a;
+    z-index: 100;
     border-radius: 25px;
     font-size: 17px;
     padding: 20px;
@@ -132,17 +121,18 @@ dialog {
     box-sizing: border-box;
     transition: all 150ms ease;
     cursor: pointer;
+    position: fixed;
+    margin: 0px;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 }
 
 #unameinput {
     height: max-content;
     background-color: #000;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    border: 3px #310063 solid;
-    box-shadow: inset 0px 0px 30px #1a0033,
-                0px 4px 20px #000,
-                0px 4px 10px #310063;
+    font-family: 'Roboto Mono', monospace;
+    border: 3px #333 solid;
     border-radius: 25px;
     font-size: 17px;
     padding: 10px;
@@ -157,7 +147,7 @@ dialog {
 }
 
 #unameinput:focus {
-    background-color: #0a0a0a;
+    background-color: #111;
     color: #fff;
     outline: none;
 }
@@ -165,12 +155,9 @@ dialog {
 button {
     height: max-content;
     background-color: #000;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    border: 3px #310063 solid;
-    box-shadow: inset 0px 0px 30px #1a0033,
-                0px 4px 20px #000,
-                0px 4px 10px #310063;
+    font-family: 'Roboto Mono', monospace;
+    
+    border: 3px #333 solid;
     border-radius: 25px;
     font-size: 17px;
     padding: 10px 20px;
@@ -184,5 +171,5 @@ button {
 
 button:hover {
     background-color: #111;
-    border: 3px #9c38ff solid;
+    border: 3px #fff solid;
 }

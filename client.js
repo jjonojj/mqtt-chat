@@ -29,6 +29,13 @@ Connect();
 msgInput = document.getElementById("msgInput");
 uname = document.getElementById("uname");
 
+// Add an event listener for the "Enter" key press
+msgInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
+
 document.getElementById("uname").showModal();
 
 // connect function, firefox says that its unsafe or stuff
@@ -49,14 +56,6 @@ function setUsername() {
     }
     console.log("usrName: " + usrName);
 }
-
-
-// event listener for the input field
-msgInput.addEventListener("keypress", function(event) {
-    if (event.keyCode == 13) {
-        sendMessage();
-    }
-})
 
 // function for sending messages because client/server are 1 file
 function sendMessage() {
