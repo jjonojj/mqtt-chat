@@ -8,16 +8,8 @@ var usrName = ""
 var idNum = Math.floor(100000 + Math.random() * 900000);
 clientId += idNum;
 const defaultNames = [
-    "quandaledingle", 
-    "joshhutcherson", 
-    "peepeelover", 
-    "toiletdefuser", 
-    "nineelevenlover911_", 
-    "pleasehelpme",
-    "helpmeplease",
-    "47.0847905,9.5629148,15.5___",
-    "johanneslutscher",
-    "rainer_winkler",
+	"quandale",
+	"huan"
 ];
 
 mqttClient = new Paho.MQTT.Client(hostname,port,clientId);
